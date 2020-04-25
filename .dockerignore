@@ -1,0 +1,17 @@
+*
+!*.*
+*.tmp
+*.log
+*.test
+!*/
+.*/
+!*.go
+!*.mod
+!*.sum
+!*.md
+!*.yaml
+!.dockerignore
+!.gcloudignore
+!.gitignore
+!.env.*
+!Dockerfile
