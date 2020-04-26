@@ -62,6 +62,13 @@ Use case may include:
 2. Download this repository via `git clone`, then `cd` to the project directory
 3. Run `docker build --tag wwf .`
 4. The build proccess is really really fast, so I'm not going to prebuild anything for ya.
+5. Fine! Here is the pre built Docker image `warwolfsystem/warwolf`. But keep in mind it could be really really old.
+
+### AppEngine (If you like to pay them)
+
+1. Install `gcloud`, then create a `project` on Google Cloud Platform and enable billing.
+2. Download this repository via `git clone`, then `cd` to the project directory.
+3. Run `gcloud app deploy --project <YOUR_PROJECT_ID>` and then follow the screen.
 
 ## Run
 
