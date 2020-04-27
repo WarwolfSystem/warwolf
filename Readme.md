@@ -80,7 +80,7 @@ In fact, enviroment variables is how we will config the Warwolf System. All the 
 
 For example, to run as the local server (assuming the generated binary is called `warwolf`):
 
-    WWFAs=Client WWFBackend=https://google.appspot.com/fun-but-not-real WWFKey=DontTellAnyBody WWFListen=:2048 ./warwolf
+    WWFAs=Client WWFBackend=https://<BACKEND_ADDRESS>/fun-but-not-real WWFKey=DontTellAnyBody WWFListen=:2048 ./warwolf
 
 To run as the backend server:
 
@@ -89,7 +89,7 @@ To run as the backend server:
 If you want to be a _pro_, to run a local server:
 
     export WWFAs=Client
-    export WWFBackend=https://microsoft.com/why-open-source-is-communism
+    export WWFBackend=https://<BACKEND_ADDRESS>/why-open-source-is-communism
     export WWFKey=ImNotAOneLiner
     export WWFListen=0.0.0.0:2048
     export WWFBackendHostEnforce=
@@ -123,7 +123,7 @@ Well, use
     docker run --name wwf --detach --restart always \
       --net host \
       --env WWFAs=Client \
-      --env WWFBackend=https://microsoft.com/why-open-source-is-communism \
+      --env WWFBackend=https://<BACKEND_ADDRESS>/why-open-source-is-communism \
       --env WWFKey=ImNotAOneLiner \
       --env WWFListen=0.0.0.0:1080 \
       --env WWFBackendHostEnforce= \
