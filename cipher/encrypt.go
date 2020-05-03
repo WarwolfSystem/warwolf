@@ -94,9 +94,6 @@ func Decrypt(t Time, gcm func() (cipher.AEAD, error), nv NonceVerifier, f *reade
 			return e
 		}
 		copy(nonce[:], d[:NonceSize])
-		if !nv(nonce[:], t) {
-			return ErrInvalidNonce
-		}
 		nlen := len(nonce)
 		gg, e := gcm()
 		if e != nil {
@@ -108,6 +105,9 @@ func Decrypt(t Time, gcm func() (cipher.AEAD, error), nv NonceVerifier, f *reade
 		}
 		if len(o) != 2 {
 			return ErrInvalidSize
+		}
+		if !nv(nonce[:], t) {
+			return ErrInvalidNonce
 		}
 		size := uint16(o[0])<<8 | uint16(o[1])
 		d, e = f.Fetch(BlockSize + int(size))
