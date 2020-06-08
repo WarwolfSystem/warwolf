@@ -41,7 +41,7 @@ func (c Config) Load() Config {
 		Key:                    []byte(strings.TrimSpace(config.LoadStringDefault("Key", "TheRightToCommunicateFreelyPrivatelySecretlyAndSecurelyIsEssentialForASafeSociety"))),
 		Logging:                strings.ToLower(strings.TrimSpace(config.LoadStringDefault("Logging", "yes"))) == "yes",
 		IdleTimeout:            config.LoadTimeDurationDefault("IdleTimeout", 120*time.Second),
-		RetrieveTimeout:        config.LoadTimeDurationDefault("RetrieveTimeout", 3*time.Second),
+		RetrieveTimeout:        config.LoadTimeDurationDefault("RetrieveTimeout", 2*time.Second),
 		DialTimeout:            config.LoadTimeDurationDefault("DialTimeout", 5*time.Second),
 		MaxOutgoingConnections: int(config.LoadUint16Default("MaxOutgoingConnections", 128)),
 		TLSPublicKeyBlock:      []byte(strings.TrimSpace(config.LoadString("TLSPublicKeyBlock"))),

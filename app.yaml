@@ -6,7 +6,7 @@ env_variables:
   WWFLogging: No
   WWFIdleTimeout: 120
   WWFDialTimeout: 5
-  WWFRetrieveTimeout: 3
+  WWFRetrieveTimeout: 1
   WWFMaxOutgoingConnections: 128
 
 instance_class: F1
