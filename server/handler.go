@@ -105,6 +105,7 @@ func (h *handler) Serve(w http.ResponseWriter, r *http.Request) {
 			if e != nil {
 				return e
 			}
+			flush := p.Size() > cipher.HeaderSize
 			p.Truncate(p.Size() + cipher.BlockSize)
 			nonce, e := cipher.Nonce()
 			if e != nil {
@@ -114,7 +115,9 @@ func (h *handler) Serve(w http.ResponseWriter, r *http.Request) {
 			if e != nil {
 				return e
 			}
-			w.(http.Flusher).Flush()
+			if flush {
+				w.(http.Flusher).Flush()
+			}
 			return nil
 		}, dispatch.Config{
 			MaxRetrieveLen: maxRespondDataSize,
